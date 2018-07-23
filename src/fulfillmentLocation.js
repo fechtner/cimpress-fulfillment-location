@@ -176,7 +176,10 @@ class FulfillmentLocationClient {
                 qs: {
                     showArchived: false
                 },
-                timeout: this.timeout
+                timeout: this.timeout,
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
             };
 
             if ( this.log && this.log.info ) {
