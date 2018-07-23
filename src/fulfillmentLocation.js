@@ -82,6 +82,7 @@ class FulfillmentLocationClient {
             });
 
             instance.defaults.headers.common['Authorization'] = authorization;
+            instance.defaults.headers.common['Cache-Control'] = 'no-cache';
 
             if ( !this.useCaching ) {
                 return this._getFulfillmentLocationFromService(instance, locationId)
@@ -130,6 +131,7 @@ class FulfillmentLocationClient {
             });
     
             instance.defaults.headers.common['Authorization'] = authorization;
+            instance.defaults.headers.common['Cache-Control'] = 'no-cache';
     
             if ( !this.useCaching ) {
                 return this._getFulfillmentLocationsFromService(instance)
@@ -176,10 +178,7 @@ class FulfillmentLocationClient {
                 qs: {
                     showArchived: false
                 },
-                timeout: this.timeout,
-                headers: {
-                    'Cache-Control': 'no-cache'
-                }
+                timeout: this.timeout
             };
 
             if ( this.log && this.log.info ) {
@@ -215,10 +214,7 @@ class FulfillmentLocationClient {
                 qs: {
                     showArchived: false
                 },
-                timeout: this.timeout,
-                headers: {
-                    'Cache-Control': 'no-cache'
-                }
+                timeout: this.timeout
             };
 
             if ( this.log && this.log.info ) {
